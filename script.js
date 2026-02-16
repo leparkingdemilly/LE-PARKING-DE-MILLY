@@ -8,8 +8,19 @@ function calculerPrix() {
     return;
   }
 
-  const diff = depart - arrivee;
-  const jours = Math.ceil(diff / (1000 * 60 * 60 * 24));
+  const arrivee = new Date(arriveeInput);
+  const depart = new Date(departInput);
+
+  if (depart < arrivee) {
+    alert("La date de départ doit être après l'arrivée");
+    return;
+  }
+
+  // Différence en millisecondes
+  const diffMs = depart - arrivee;
+
+  // Conversion en jours +1 pour inclure arrivée ET départ
+  const jours = Math.floor(diffMs / (1000 * 60 * 60 * 24)) + 1;
 
   let prixJour = 10;
 
