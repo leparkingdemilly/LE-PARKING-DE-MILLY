@@ -1,22 +1,39 @@
-```javascript
-function calculerPrix() {
-  const jours = parseInt(document.getElementById("jours").value);
-  const transfert = parseInt(document.getElementById("transfert").value);
+``javascript
+const arrivee = document.getElementById("arrivee");
+const depart = document.getElementById("depart");
+const transfert = document.getElementById("transfert");
+const joursSpan = document.getElementById("jours");
+const totalSpan = document.getElementById("total");
+const whatsapp = document.getElementById("whatsapp");
 
-  if (!jours || jours <= 0) {
-    alert("Veuillez entrer un nombre de jours valide");
-    return;
-  }
-
-  let prixJour = 10;
-
-  if (jours >= 30) prixJour = 6;
-  else if (jours >= 22) prixJour = 7;
-  else if (jours >= 15) prixJour = 8;
-  else if (jours >= 7) prixJour = 9;
-
-  const total = jours * prixJour + transfert;
-
-  document.getElementById("prix").textContent = total + "€";
+function prixParJour(jours) {
+  if (jours >= 30) return 6;
+  if (jours >= 22) return 7;
+  if (jours >= 15) return 8;
+  if (jours >= 7) return 9;
+  return 10;
 }
+
+function calcul() {
+  const d1 = new Date(arrivee.value);
+  const d2 = new Date(depart.value);
+
+  if (!arrivee.value || !depart.value) return;
+
+  const diff = Math.ceil((d2 - d1) / (1000 * 60 * 60 * 24));
+  if (diff <= 0) return;
+
+  const prixJour = prixParJour(diff);
+  const total = diff * prixJour + Number(transfert.value);
+
+  joursSpan.textContent = diff;
+  totalSpan.textContent = total + "€";
+
+  const message = `Bonjour, je souhaite réserver au Parking de Milly\nArrivée: ${arrivee.value}\nDépart: ${depart.value}\nDurée: ${diff} jours\nTotal: ${total}€`;
+  whatsapp.href = `https://wa.me/590XXXXXXXXX?text=${encodeURIComponent(message)}`;
+}
+
+arrivee.addEventListener("change", calcul);
+depart.addEventListener("change", calcul);
+transfert.addEventListener("change", calcul);
 ```
