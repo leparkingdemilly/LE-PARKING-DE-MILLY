@@ -30,7 +30,7 @@ function calcul() {
   totalSpan.textContent = total + "€";
 
   const message = `Bonjour, je souhaite réserver au Parking de Milly\nArrivée: ${arrivee.value}\nDépart: ${depart.value}\nDurée: ${diff} jours\nTotal: ${total}€`;
-  whatsapp.href = `https://wa.me/590XXXXXXXXX?text=${encodeURIComponent(message)}`;
+  whatsapp.href = `https://wa.me/590690724661?text=${encodeURIComponent(message)}`;
 }
 
 arrivee.addEventListener("change", calcul);
