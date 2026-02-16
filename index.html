@@ -1,0 +1,87 @@
+
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Parking Aéroport Guadeloupe | LE PARKING DE MILLY</title>
+
+  <meta name="description" content="Parking sécurisé proche aéroport Guadeloupe. Transfert inclus. LE PARKING DE MILLY aux Abymes Perrin." />
+  <meta name="keywords" content="parking aeroport guadeloupe, parking les abymes, parking pointe a pitre" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="Logo LE PARKING DE MILLY" class="logo" />
+  <h1>LE PARKING DE MILLY</h1>
+  <p>Perrin, Les Abymes – Guadeloupe</p>
+</header>
+
+<section class="hero">
+  <h2>Votre parking sécurisé à 5 min de l'aéroport</h2>
+  <p>Voyagez sereinement, on garde votre véhicule en sécurité</p>
+
+  <a class="whatsapp" href="https://wa.me/590690724661" target="_blank">
+    📲 Réserver sur WhatsApp
+  </a>
+</section>
+
+<section class="services">
+  <h2>Nos services</h2>
+  <ul>
+    <li>✔ Parking sécurisé 24h/24</li>
+    <li>✔ Transfert Aéroport Aller/Retour (14€)</li>
+    <li>✔ Transfert Gare Maritime Aller/Retour (20€)</li>
+    <li>✔ Lavage auto (sur demande)</li>
+    <li>✔ Petsitter (sur demande)</li>
+  </ul>
+</section>
+
+<section class="tarifs">
+  <h2>Calculateur de tarif</h2>
+
+  <label>Nombre de jours :</label>
+  <input type="number" id="jours" placeholder="Ex: 10" />
+
+  <label>Transfert :</label>
+  <select id="transfert">
+    <option value="0">Sans transfert</option>
+    <option value="14">Aéroport +14€</option>
+    <option value="20">Gare maritime +20€</option>
+  </select>
+
+  <button onclick="calculerPrix()">Calculer</button>
+
+  <p class="resultat">Prix estimé : <span id="prix">0€</span></p>
+</section>
+
+<section class="reservation">
+  <h2>Réserver</h2>
+
+  <form action="https://formsubmit.co/leparkingdemilly@gmail.com" method="POST">
+    <input type="text" name="Nom" placeholder="Nom" required />
+    <input type="tel" name="Téléphone" placeholder="Téléphone" required />
+    <input type="email" name="Email" placeholder="Email" required />
+
+    <label>Date arrivée</label>
+    <input type="date" name="Arrivee" required />
+
+    <label>Date départ</label>
+    <input type="date" name="Depart" required />
+
+    <button type="submit">Envoyer la réservation</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 LE PARKING DE MILLY – Perrin Les Abymes</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+```
