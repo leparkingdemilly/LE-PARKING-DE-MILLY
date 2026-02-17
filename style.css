@@ -70,3 +70,19 @@ footer {
   padding: 20px;
   border-top: 1px solid #333;
 }
+.galerie {
+  text-align: center;
+}
+
+.photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.photos img {
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid #ffd700;
+}
