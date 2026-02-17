@@ -1,3 +1,4 @@
+// ===== CALCULATEUR TARIF =====
 function calculerPrix() {
   const arriveeInput = document.getElementById("arrivee").value;
   const departInput = document.getElementById("depart").value;
@@ -16,10 +17,7 @@ function calculerPrix() {
     return;
   }
 
-  // Différence en millisecondes
   const diffMs = depart - arrivee;
-
-  // Conversion en jours +1 pour inclure arrivée ET départ
   const jours = Math.floor(diffMs / (1000 * 60 * 60 * 24)) + 1;
 
   let prixJour = 10;
@@ -30,6 +28,19 @@ function calculerPrix() {
   else if (jours >= 7) prixJour = 9;
 
   const total = jours * prixJour + transfert;
-
   document.getElementById("prix").textContent = total + "€";
 }
+
+// ===== SLIDER AUTO =====
+let index = 0;
+const slides = document.getElementById("slides");
+
+function slideAuto() {
+  if (!slides) return;
+
+  const total = slides.children.length;
+  index = (index + 1) % total;
+  slides.style.transform = `translateX(-${index * 100}%)`;
+}
+
+setInterval(slideAuto, 3000);
