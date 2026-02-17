@@ -46,6 +46,22 @@ h2 {
   color: #ffd700;
 }
 
+slider {
+  overflow: hidden;
+  border-radius: 10px;
+  border: 2px solid #ffd700;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.slides img {
+  width: 100%;
+  flex-shrink: 0;
+}
+
 input, select, button {
   width: 100%;
   padding: 12px;
@@ -69,20 +85,4 @@ footer {
   text-align: center;
   padding: 20px;
   border-top: 1px solid #333;
-}
-.galerie {
-  text-align: center;
-}
-
-.photos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.photos img {
-  width: 100%;
-  border-radius: 8px;
-  border: 2px solid #ffd700;
 }
