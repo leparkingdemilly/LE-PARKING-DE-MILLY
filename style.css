@@ -50,9 +50,9 @@ h2 {
   overflow: hidden;
   border-radius: 10px;
   border: 2px solid #ffd700;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 20px auto;
-  height: 700px; /* hauteur fixe */
+  height: 800px; /* hauteur fixe */
 }
 
 .slides {
