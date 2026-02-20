@@ -80,10 +80,12 @@
   <h2>Réserver</h2>
 
   <form action="https://formsubmit.co/leparkingdemilly@gmail.com" method="POST">
-    <input type="text" name="Nom" placeholder="Nom" required />
-    <input type="tel" name="Téléphone" placeholder="Téléphone" required />
-    <input type="email" name="Email" placeholder="Email" required />
+   <input type="hidden" name="_next" value="https://www.leparkingdemilly.fr/merci.html">
+  <input type="hidden" name="_subject" value="Nouvelle réservation - Parking de Milly">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_autoresponse" value="Merci pour votre réservation au Parking de Milly. Nous vous contactons rapidement.">
 
+  <input type="text" name="Nom" placeholder="Nom" required />
     <label>Date arrivée</label>
     <input type="date" name="Arrivee" required />
 
