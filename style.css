@@ -98,3 +98,14 @@ img {
   height: auto;
   display: block;
 }
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 20px;
+    text-align: center;
+  }
+
+  img {
+    border-radius: 8px;
+  }
+}
