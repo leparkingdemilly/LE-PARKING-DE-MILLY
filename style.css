@@ -133,3 +133,27 @@ img {
     font-size: 18px;
   }
 }
+.info-reservation {
+  background-color: #111;
+  border: 1px solid #ffd700;
+  padding: 15px;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.urgence-reservation {
+  background-color: #1a1a1a;
+  border-left: 4px solid #25D366;
+  padding: 15px;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.urgence-reservation a {
+  color: #25D366;
+  font-weight: bold;
+  text-decoration: none;
+}
