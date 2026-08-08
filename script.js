@@ -22,10 +22,10 @@ function calculerPrix() {
 
   let prixJour = 10;
 
-  if (jours >= 30) prixJour = 6;
+  if (jours >= 31) prixJour = 6;
   else if (jours >= 22) prixJour = 7;
   else if (jours >= 15) prixJour = 8;
-  else if (jours >= 7) prixJour = 9;
+  else if (jours >= 8) prixJour = 9;
 
   const total = jours * prixJour + transfert;
   document.getElementById("prix").textContent = total + "€";
