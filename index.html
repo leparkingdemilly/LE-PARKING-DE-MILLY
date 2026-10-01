@@ -96,26 +96,58 @@ Pour réserver votre place au <strong>PARKING DE MILLY</strong>, merci de rempli
 
   <h2>Réserver</h2>
 
-  <form action="https://formsubmit.co/leparkingdemilly@gmail.com" method="POST">
-   <input type="hidden" name="_next" value="https://www.leparkingdemilly.fr/merci.html">
-  <input type="hidden" name="_subject" value="Nouvelle réservation - Parking de Milly">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_autoresponse" value="Merci pour votre réservation au Parking de Milly. Nous vous contactons rapidement.">
+ <form action="https://api.web3forms.com/submit" method="POST">
 
-  <label>Nom Prénom</label>  
-  <input type="text" name="Nom" placeholder="Nom" required />
+  <input type="hidden" name="access_key" value="28e126ce-6a50-4008-8740-30d0ff5c9535">
+
+  <input type="hidden" name="_next" value="https://www.leparkingdemilly.fr/merci.html">
+
+  <input type="hidden" name="subject" value="Nouvelle réservation - Le Parking de Milly">
+
+  <input type="hidden" name="Nombre de jours" id="formJours">
+
+  <input type="hidden" name="Transfert choisi" id="formTransfert">
+
+  <input type="hidden" name="Prix total" id="formPrix">
+
+  <label>Nom et prénom</label>
+  <input type="text" name="Nom et prénom" placeholder="Votre nom et prénom" required />
+
   <label>Numéro de téléphone</label>
-  <input type="tel" name="Téléphone" placeholder="Ex: 0690..." required />
+  <input type="tel" name="Téléphone" placeholder="Ex : 0690..." required />
+
   <label>Adresse email</label>
   <input type="email" name="Email" placeholder="Votre email" required />
-    <label>Date arrivée</label>
-    <input type="date" name="Arrivee" required />
 
-    <label>Date départ</label>
-    <input type="date" name="Depart" required />
+  <label>Commune de résidence</label>
+  <input type="text" name="Commune de résidence" placeholder="Ex : Les Abymes" required />
 
-    <button type="submit">Envoyer la réservation</button>
-  </form>
+  <label>Date d'arrivée au parking</label>
+  <input type="date" name="Date d'arrivée" id="formArrivee" required />
+
+  <label>Heure d'arrivée au parking</label>
+  <input type="time" name="Heure d'arrivée au parking" required />
+
+  <label>Date de départ</label>
+  <input type="date" name="Date de départ" id="formDepart" required />
+
+  <label>Heure du vol</label>
+  <input type="time" name="Heure du vol" required />
+
+  <label>Nombre de voyageurs</label>
+  <input type="number" name="Nombre de voyageurs" min="1" placeholder="Ex : 2" required />
+
+  <label>Transfert choisi</label>
+  <select name="Transfert" id="formTransfertSelect" required>
+    <option value="">Choisissez votre transfert</option>
+    <option value="Aéroport - 14 € aller-retour">Aéroport - 14 € aller-retour</option>
+    <option value="Gare maritime - 20 € aller-retour">Gare maritime - 20 € aller-retour</option>
+    <option value="Aucun transfert">Aucun transfert</option>
+  </select>
+
+  <button type="submit">Envoyer la réservation</button>
+
+</form>
 </section>
 
 <footer>
