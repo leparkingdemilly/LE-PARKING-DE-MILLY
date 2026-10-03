@@ -146,7 +146,7 @@ function preparerReservation() {
   return true;
 }
 
-/ ===== SYNCHRONISATION DU TRANSFERT =====
+// ===== SYNCHRONISATION DU TRANSFERT =====
 const formTransfertSelect = document.getElementById("formTransfertSelect");
 const transfertCalculateur = document.getElementById("transfert");
 
