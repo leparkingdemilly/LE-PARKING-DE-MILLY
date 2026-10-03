@@ -88,16 +88,63 @@ function calculerPrix() {
 
 // ===== PRÉPARATION DE LA RÉSERVATION =====
 function preparerReservation() {
+  const arriveeInput = document.getElementById("formArrivee").value;
+  const departInput = document.getElementById("formDepart").value;
+  const transfertSelect = document.getElementById("formTransfertSelect");
 
-  const resultat = calculerPrix();
-
-  if (!resultat) {
+  // Vérifier les dates du formulaire
+  if (!arriveeInput || !departInput) {
+    alert("Veuillez renseigner les dates d'arrivée et de départ.");
     return false;
   }
 
+  // Créer les dates en heure locale
+  const [aa, ma, ja] = arriveeInput.split("-").map(Number);
+  const [ad, md, jd] = departInput.split("-").map(Number);
+
+  const arrivee = new Date(aa, ma - 1, ja);
+  const depart = new Date(ad, md - 1, jd);
+
+  if (depart < arrivee) {
+    alert("La date de départ doit être égale ou postérieure à la date d'arrivée.");
+    return false;
+  }
+
+  // Comptage inclusif : arrivée + départ comptent
+  const jours = Math.round((depart - arrivee) / 86400000) + 1;
+
+  // Tarifs Le Parking de Milly
+  let prixJour = 10;
+
+  if (jours >= 31) {
+    prixJour = 6;
+  } else if (jours >= 22) {
+    prixJour = 7;
+  } else if (jours >= 15) {
+    prixJour = 8;
+  } else if (jours >= 8) {
+    prixJour = 9;
+  }
+
+  // Calcul du transfert
+  const transfertTexte = transfertSelect.value;
+  let prixTransfert = 0;
+
+  if (transfertTexte.startsWith("Aéroport")) {
+    prixTransfert = 14;
+  } else if (transfertTexte.startsWith("Gare maritime")) {
+    prixTransfert = 20;
+  }
+
+  const total = jours * prixJour + prixTransfert;
+
+  // Informations envoyées à Web3Forms
+  document.getElementById("formJours").value = jours;
+  document.getElementById("formTransfert").value = transfertTexte;
+  document.getElementById("formPrix").value = total + " €";
+
   return true;
 }
-
 
 // ===== SYNCHRONISATION DU TRANSFERT =====
 const formTransfertSelect = document.getElementById("formTransfertSelect");
